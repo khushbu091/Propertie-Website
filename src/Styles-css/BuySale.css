@@ -1,0 +1,144 @@
+/* Layout */
+.buy-sale-container {
+    display: flex;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .search-filters {
+    width: 250px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Search Filters */
+  .search-filters h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .search-filters input,
+  .search-filters select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-button {
+    width: 100%;
+    background: #7cb518;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background: #679215;
+  }
+  
+  /* Hot Properties */
+  .hot-properties-list {
+    margin-top: 20px;
+  }
+  
+  .hot-property-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .hot-property-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .hot-property-item p {
+    margin: 0;
+    color: #7cb518;
+  }
+  
+  .hot-property-item span {
+    color: #333;
+  }
+  
+  /* Property Listing */
+  .property-Buy-Sale {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  .property-Buy-Sale p {
+    font-size: 14px;
+  }
+  
+  .sort-options {
+    float: right;
+    padding: 5px;
+  }
+  
+  /* Property Cards */
+  .buysale-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .buysale-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 240px;
+    position: relative;
+  }
+  
+  .buysale-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .buysale-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .buysale-features {
+    margin: 10px 0;
+  }
+  
+  .buysale-features span {
+    background: #444;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  .details-button {
+    background: #7cb518;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .details-button:hover {
+    background: #679215;
+  }
+  
