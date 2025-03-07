@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import "../Styles-css/Navbar.css";
-import logo from "../Image/logo.png";
+import logo from "../Image/home-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <div className="container">
     <nav className="navbar">
       <div className="logo">
         <img src={logo} alt="Makaan Logo" />
-        <span>Makaan</span>
+        <span>BuyRentGo</span>
       </div>
 
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
@@ -30,15 +31,19 @@ const Navbar = () => {
             <a href="listing">Listings</a>
           </div>
         </div>
+        <a href="blog">BLOG</a>
         <a href="contact">CONTACT</a>
       </div>
 
-      <button className="add-btn">Add Property</button>
+     
+      <button className="add-btn"><a href="login">Login</a></button>
+
 
       <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
         ☰
       </div>
     </nav>
+    </div>
   );
 };
 

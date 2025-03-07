@@ -9,7 +9,7 @@ const Agent = () => {
     {
       id: 1,
       name: "John Smith",
-      img: team1, // Replace with actual image URL
+      img: team1, 
       email: "abc@domain.com",
       phone: "(9009) 899 889",
       description:
@@ -18,7 +18,7 @@ const Agent = () => {
     {
       id: 2,
       name: "John Smith",
-      img: team2, // Replace with actual image URL
+      img: team2, 
       email: "abc@domain.com",
       phone: "(9009) 899 889",
       description:
@@ -27,7 +27,7 @@ const Agent = () => {
     {
       id: 3,
       name: "John Smith",
-      img: team3, // Replace with actual image URL
+      img: team3, 
       email: "abc@domain.com",
       phone: "(9009) 899 889",
       description:
@@ -36,7 +36,7 @@ const Agent = () => {
     {
         id: 4,
         name: "John Smith",
-        img: team4, // Replace with actual image URL
+        img: team4, 
         email: "abc@domain.com",
         phone: "(9009) 899 889",
         description:

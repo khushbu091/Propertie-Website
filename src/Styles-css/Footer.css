@@ -1,6 +1,7 @@
 .footer {
-    background: #0b2545;
+    background: #000;
     color: white;
+    border-top: 1px solid gold;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
   }
@@ -77,7 +78,7 @@
   }
   
   .newsletter button {
-    background: #00c9a7;
+    background: goldenrod;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -86,7 +87,7 @@
   }
   
   .newsletter button:hover {
-    background: #00a387;
+    background: gold;
   }
   
   .footer-bottom {
@@ -97,7 +98,7 @@
   }
   
   .footer-bottom a {
-    color: #00c9a7;
+    color: goldenrod;
     text-decoration: none;
   }
   

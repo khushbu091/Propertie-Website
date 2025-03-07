@@ -1,8 +1,8 @@
 
-import property_img from "../Image/about.jpg"
+import property_img from "../Image/ab.jpg"
 import { FaHeadset, FaSearch, FaBolt, FaClipboardCheck, FaTrophy, FaIdCard } from "react-icons/fa";
 import React from "react";
-import "../Styles-css/About.css"; // Import the CSS file
+import "../Styles-css/About.css"; 
 
 const About = () => {
     const values = [
@@ -91,14 +91,14 @@ const About = () => {
       </div>
     </section>
     <section className="about-property">
-      <h2>🏡 About Our Property Services</h2>
+      <h2> About Our Property Services</h2>
       <p>
         At <strong>[Your Website Name]</strong>, we make buying, selling, and renting properties a seamless experience. 
         Whether you're looking for a luxury villa, a budget-friendly apartment, or a commercial space, 
         we have a wide range of listings to match your needs.
       </p>
 
-      <h3>🌟 Why Choose Us?</h3>
+      <h3> Why Choose Us?</h3>
       <ul>
         <li>✅ <strong>Verified Properties:</strong> 100% authentic listings with detailed information.</li>
         <li>✅ <strong>Best Price Guarantee:</strong> Competitive market rates with no hidden charges.</li>
@@ -106,7 +106,7 @@ const About = () => {
         <li>✅ <strong>Easy Financing:</strong> Get connected with mortgage and loan providers.</li>
       </ul>
 
-      <h3>🏠 Our Services</h3>
+      <h3> Our Services</h3>
       <ul>
         <li>🔹 <strong>Buy & Sell Properties:</strong> Hassle-free transactions with top deals.</li>
         <li>🔹 <strong>Rent & Lease:</strong> Find the perfect home or tenant with ease.</li>

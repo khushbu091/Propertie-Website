@@ -108,7 +108,7 @@
     background-color: #219150;
   }
   
-  /* Responsive */
+ 
   @media (max-width: 768px) {
     .contact__info {
       flex-direction: column;

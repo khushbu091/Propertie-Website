@@ -12,7 +12,7 @@ const BuySale = () => {
       id: 1,
       name: "Royal Inn",
       price: "$234,900",
-      img: h1, // Replace with actual image URL
+      img: h1, 
       status: "Sold",
       features: [5, 2, 2, 1],
     },
@@ -79,6 +79,12 @@ const BuySale = () => {
           <option>Property Type</option>
           <option>Apartment</option>
           <option>Villa</option>
+          <option>Office</option>
+          <option>Home</option>
+          <option>Singlex</option>
+          <option>Duplex</option>
+          <option>Flat</option>
+          <option>Banglo</option>
         </select>
         <button className="search-button">Find Now</button>
 

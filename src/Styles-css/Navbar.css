@@ -7,25 +7,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #000;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
   
   /* Logo */
   .logo{
-    max-width: 140px;
+    max-width: 80px;
     height: 50px;
     display: flex;
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #00b894;
+    color: goldenrod;
   }
   
   .logo img {
-    width: 100px;
+    width: 60px;
     height: auto;
     margin-right: 10px;
   }
@@ -38,13 +38,13 @@
   
   .nav-links a {
     text-decoration: none;
-    color: #222;
-    font-weight: 600;
+    color: goldenrod;
+    font-weight: 800;
     transition: color 0.3s ease;
   }
   
   .nav-links a:hover {
-    color: #00b894;
+    color: gold;
   }
   
   /* Dropdown */
@@ -77,19 +77,21 @@
     background: #f8f8f8;
   }
   
-  /* Add Property Button */
+  /* login/register Button */
+  
   .add-btn {
-    background: #00b894;
+    background: goldenrod;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    margin-right: 5px;
   }
   
   .add-btn:hover {
-    background: #019267;
+    background: gold;
   }
   
   /* Mobile Menu */

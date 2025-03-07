@@ -6,7 +6,7 @@ import h3 from "../Image/property-3.jpg";
 import h4 from "../Image/property-4.jpg";
 import h5 from "../Image/property-5.jpg";
 import h6 from "../Image/property-6.jpg";
-const Listing = () => {
+const Blog = () => {
   const posts = [
     {
       id: 1,
@@ -89,4 +89,4 @@ const Listing = () => {
   );
 };
 
-export default Listing;
+export default Blog;

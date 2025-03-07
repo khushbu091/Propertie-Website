@@ -1,0 +1,160 @@
+/* General Styling */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .login-box {
+    background: #fff;
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Image Styling */
+  .image-container img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Message */
+  .login-message {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Dots Indicator */
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 3px;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .dot.active {
+    background-color: #00aaff;
+  }
+  
+  /* Login Buttons */
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .phone {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+  }
+  
+  .google {
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+  
+  .google img {
+    width: 20px;
+    margin-right: 8px;
+  }
+  
+  /* Input Fields */
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-field {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    width: 95%;
+    padding: 8px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* OR Text */
+  .or-text {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  /* Email Login Link */
+  .login-email {
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .login-email:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer Text */
+  .privacy-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 15px;
+  }
+  
+  .terms {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .terms a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .terms a:hover {
+    text-decoration: underline;
+  }
+  

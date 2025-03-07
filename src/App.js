@@ -5,7 +5,8 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import BuySale from "./Components/BuySale";
 import Agent from "./Components/Agent";
-import Listing from "./Components/Listing";
+import LoginForm from "./Components/Login";
+import Blog from "./Components/Blog";
 const App=()=> {
   return (
     <>
@@ -18,7 +19,9 @@ const App=()=> {
         <Route path="contact" element={<Contact />} /> 
         <Route path="buysale" element={<BuySale />} /> 
         <Route path="agent" element={<Agent />} />
-        <Route path="listing" element={<Listing />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="login" element={<LoginForm />} />
+
 
 
 
