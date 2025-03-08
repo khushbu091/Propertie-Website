@@ -7,6 +7,7 @@ import BuySale from "./Components/BuySale";
 import Agent from "./Components/Agent";
 import LoginForm from "./Components/Login";
 import Blog from "./Components/Blog";
+import Add_property_form from "./Components/Add_property_form";
 const App=()=> {
   return (
     <>
@@ -21,6 +22,8 @@ const App=()=> {
         <Route path="agent" element={<Agent />} />
         <Route path="blog" element={<Blog />} />
         <Route path="login" element={<LoginForm />} />
+        <Route path="addpropertyform" element={<Add_property_form />} />
+
 
 
 
