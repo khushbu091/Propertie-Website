@@ -8,6 +8,13 @@ import Agent from "./Components/Agent";
 import LoginForm from "./Components/Login";
 import Blog from "./Components/Blog";
 import Add_property_form from "./Components/Add_property_form";
+// ---------------Admin pannel --------------------------------------------------
+import AdminLogin from "./Admin-Pannel/Admin-Component/AdminLogin";
+import AdminDashboard from "./Admin-Pannel/Admin-Component/AdminDashboard";
+import AdminLayout from "./Admin-Pannel/Admin-Component/AdminLayout";
+import ProtectedRoute from "./Admin-Pannel/Admin-Component/ProtectedRoute";
+
+
 const App=()=> {
   return (
     <>
@@ -23,8 +30,15 @@ const App=()=> {
         <Route path="blog" element={<Blog />} />
         <Route path="login" element={<LoginForm />} />
         <Route path="addpropertyform" element={<Add_property_form />} />
+        </Route>
 
-
+        <Route path="adminlogin" element={<AdminLogin/>} />
+        <Route path="/admin" element={
+            <ProtectedRoute>
+            <AdminLayout />
+            </ProtectedRoute>
+            }>
+        <Route index element={<AdminDashboard />} />
 
 
 
