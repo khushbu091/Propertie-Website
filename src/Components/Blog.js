@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles-css/Listing.css";
+import "../Styles-css/Blog.css";
 import h1 from "../Image/property-1.jpg";
 import h2 from "../Image/property-2.jpg";
 import h3 from "../Image/property-3.jpg";
@@ -69,7 +69,7 @@ const Blog = () => {
       </div>
 
       {/* Right Side - Sidebar */}
-      <div className="sidebar">
+      <div className="blog-sidebar">
         <div className="tabs">
           <span>Recent Post</span>
           <span>Most Popular</span>
