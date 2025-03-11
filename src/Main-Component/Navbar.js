@@ -1,49 +1,71 @@
-import React, { useState } from "react";
-import "../Styles-css/Navbar.css";
-import logo from "../Image/home-logo.png";
+import { FaFacebookF, FaTimes, FaYoutube, FaInstagram } from "react-icons/fa";
+import { IoMdCall } from "react-icons/io";
+import { IoLocationSharp, IoPowerOutline } from "react-icons/io5";
+import "../Styles-css/Navbar.css"; // Importing the external CSS file
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="container">
-    <nav className="navbar">
-      <div className="logo">
-        <img src={logo} alt="Makaan Logo" />
-        <span>BuyRentGo</span>
-      </div>
-
-      <div className={`nav-links ${isOpen ? "open" : ""}`}>
-        <a href="home">HOME</a>
-        <a href="about">ABOUT</a>
-        <div className="dropdown">
-          <a href="#">PROPERTY ▼</a>
-          <div className="dropdown-content">
-            <a href="buysale">Buy</a>
-            <a href="buysale">Sale</a>
-            <a href="buysale">Rent</a>
+    <header>
+      {/* Top Bar */}
+      <div className="header-top">
+        <div className="left">
+          <div>
+            <IoLocationSharp className="icon" />
+            <span>Battaglia Veneto, Italy</span>
+          </div>
+          <div>
+            <IoMdCall className="icon" />
+            <span>+00 123 456789</span>
           </div>
         </div>
-        <div className="dropdown">
-          <a href="#">PAGES ▼</a>
-          <div className="dropdown-content">
-            <a href="agent">Agent</a>
-            <a href="listing">Listings</a>
+        <div className="right">
+          <div>
+            <IoPowerOutline className="icon" />
+            <span>Mon to Sat - 09:00 to 21:00</span>
+          </div>
+          <div className="social-icons">
+            <FaFacebookF className="icon" />
+            <FaTimes className="icon" />
+            <FaYoutube className="icon" />
+            <FaInstagram className="icon" />
           </div>
         </div>
-        <a href="blog">BLOG</a>
-        <a href="contact">CONTACT</a>
       </div>
 
+      {/* Navigation Bar */}
+      
+
+      <div className={`header-bottom ${scrolled ? "scrolled" : ""}`}>
+        <h1 className="logo">Veedoo <span className="highlight">^^</span></h1>
+        <nav>
+          <a href="#" className="active">Home</a>
+          <a href="#">Pages</a>
+          <a href="#">Real Estate</a>
+          <a href="#">News</a>
+          <a href="#">Contact Us</a>
+        </nav>
+        <button className="nav-login-btn">Login/Register</button>
+      </div>
      
-      <button className="add-btn"><a href="login">Login</a></button>
-
-
-      <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
-        ☰
-      </div>
-    </nav>
-    </div>
+    </header>
   );
 };
 

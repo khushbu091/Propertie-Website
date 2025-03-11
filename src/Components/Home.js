@@ -1,169 +1,137 @@
-import React from "react";
-import property_img from "../Image/about.jpg"
+
+import React, { useState, useEffect } from "react";
 import "../Styles-css/Home.css"; 
-// import img1 from "../Image/icon-apartment.png";
-// import img2 from "../Image/icon-building.png";
-// import img3 from "../Image/icon-condominium.png";
-// import img5 from "../Image/icon-house.png";
-// import img6 from "../Image/icon-villa.png";
-// import img8 from "../Image/icon-neighborhood.png";
-// import img9 from "../Image/icon-housing.png";
-// import img10 from "../Image/icon-luxury.png";
-
-import pro1 from "../Image/property-1.jpg";
-import pro2 from "../Image/property-2.jpg";
-import pro3 from "../Image/property-3.jpg";
-import pro4 from "../Image/property-4.jpg";
-import pro5 from "../Image/property-5.jpg";
-import pro6 from "../Image/property-6.jpg";
-
 import { FaPhoneAlt } from "react-icons/fa";
-import { BsCalendarCheck } from "react-icons/bs";
-import agent from "../Image/call-to-action.jpg";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
-import team1 from "../Image/team-1.jpg";
-import team2 from "../Image/team-2.jpg";
-import team3 from "../Image/team-3.jpg";
-import team4 from "../Image/team-4.jpg";
-
-import testimonial1 from "../Image/testimonial-1.jpg";
-import testimonial2 from "../Image/testimonial-2.jpg";
-import testimonial3 from "../Image/testimonial-3.jpg";
-import testimonial4 from "../Image/testimonial-4.jpg";
 import { useRef } from "react";
+
+import img1 from "../Image/home-img01.jpg";
+import img2 from "../Image/home-img02.png";
+
+import test1 from "../Image/testimonial-1.jpg"
+import test2 from "../Image/testimonial-2.jpg"
+import test3 from "../Image/testimonial-3.jpg"
+
+import cart1 from "../Image/property-1.jpg"
+import cart2 from "../Image/property-2.jpg"
+import cart3 from "../Image/property-3.jpg"
+import cart4 from "../Image/property-4.jpg"
+
+import blog_main from "../Image/Blog-16.jpg"
+import blog1 from "../Image/blog-image-1.jpg"
+import blog2 from "../Image/blog-image-1.jpg"
+import blog3 from "../Image/blog-image-4.jpg"
+
+
+
+
+const images = [
+  
+];
+
+const properties = [
+  { id: 1, name: "Appartment", count: 6, icon: "🏢", highlight: true },
+  { id: 2, name: "Commercial", count: 6, icon: "🏬", highlight: true },
+  { id: 3, name: "Solo Shop", count: 6, icon: "🛍️", highlight: true },
+  { id: 4, name: "Town Ship", count: 3, icon: "🏘️", highlight: true },
+  { id: 5, name: "Villa", count: 3, icon: "🏠", highlight: true },
+  { id: 6, name: "Warehouse", count: 3, icon: "🏭", highlight: true },
+];
 
 const Properties_card = [
   {
     id: 1,
-    name: "Royal Inn",
-    price: "$234,900",
-    img: pro1, 
-    status: "Sold",
-    features: [5, 2, 2, 1],
-  },
-  {
-    id: 1,
-    name: "Royal Inn",
-    price: "$234,900",
-    img: pro1, 
-    status: "Sold",
-    features: [5, 2, 2, 1],
-  },
-  {
-    id: 1,
-    name: "Royal Inn",
-    price: "$234,900",
-    img: pro1, 
-    status: "Sold",
-    features: [5, 2, 2, 1],
+    image: cart1, // Replace with actual image path
+    price: "$148,000",
+    name: "Oakwood Manor Estates",
+    location: "25945 Washington Street, ID 1651612",
+    area: "2468 Sq",
+    beds: "5 Beds",
+    baths: "3 Baths",
+    category: "For Sale",
+    tag: "House",
+
   },
   {
     id: 2,
-    name: "Royal Inn",
-    price: "$234,900",
-    img: pro2,
-    status: "Sold",
-    features: [5, 2, 2, 1],
+    image: cart2,
+    price: "$148,000",
+    name: "Willowbrook Grey Estate",
+    location: "75835 Herta Walks, Indonesia, ID 796326",
+    area: "2468 Sq",
+    beds: "2 Beds",
+    baths: "3 Baths",
+    category: "For Sale",
+    tag: "Villa",
+
   },
   {
     id: 3,
-    name: "Royal Inn",
-    price: "$234,900",
-    img: pro3,
-    status: "Sold",
-    features: [5, 2, 2, 1],
+    image: cart3,
+    price: "$128,000",
+    name: "Timberland Interior Legacy",
+    location: "6621 Sammy Gateway, Japan, JP 65651",
+    area: "2598 Sq",
+    beds: "2 Beds",
+    baths: "4 Baths",
+    category: "For Lease",
+    tag: "Warehouse",
   },
   {
-      id: 4,
-      name: "Royal Inn",
-      price: "$234,900",
-      img: pro4,
-      status: "Sold",
-      features: [5, 2, 2, 1],
-    },
-    {
-      id: 5,
-      name: "Royal Inn",
-      price: "$234,900",
-      img: pro5,
-      status: "Sold",
-      features: [5, 2, 2, 1],
-    },
-    {
-      id: 6,
-      name: "Royal Inn",
-      price: "$234,900",
-      img: pro6,
-      status: "Sold",
-      features: [5, 2, 2, 1],
-    },
+    id: 4,
+    image: cart4,
+    price: "$128,000",
+    name: "Cedar Ridge Residences",
+    location: "760 Isidro Knolls, Japan, JP 165561",
+    area: "2598 Sq",
+    beds: "2 Beds",
+    baths: "4 Baths",
+    category: "For Rent",
+    tag: "Apartment",
+
+  },
+];
+const categories = ["All Properties", "For Sale", "For Lease", "For Rent"];
+
+const blogs = [
+  {
+    id: 1,
+    title: "Creating Your Entertainment Haven Of Your Dream.",
+    date: "FEBRUARY 29, 2024",
+    description:
+      "Turpis nunc eget lorem dolor sed viverra ipsum nunc. Poteni nullam ac tortor vitae purus...",
+    tags: ["City Views", "Concept", "Rooftop Terrace"],
+    image: blog_main,
+  },
+  {
+    id: 2,
+    title: "Unlocking the Door: Exploring Real Estate Trends and Insights!",
+    date: "MARCH 26, 2024",
+    description: "Ac ut consequat semper viverra. Facilisi etiam dignissim diam...",
+    tags: ["Concept"],
+    image:blog1,
+  },
+  {
+    id: 3,
+    title: "Tips for Creating Your Perfect Open-Air Haven.",
+    date: "MARCH 26, 2024",
+    description: "Blandit libero volutpat sed cras ornare arcu odio vivamus...",
+    tags: ["Rooftop Terrace"],
+    image: blog2,
+  },
+  {
+    id: 4,
+    title: "Why Client Consultation Corner Should Be Your First Step",
+    date: "MARCH 26, 2024",
+    description:
+      "Habitasse platea dictumst quisque sagittis purus. Egestas erat imperdiet...",
+    tags: ["City Views"],
+    image: blog3,
+  },
 ];
 
-const agents = [
-  {
-    name: "Full Name",
-    designation: "Designation",
-    image: team1,
-  },
-  {
-    name: "Full Name",
-    designation: "Designation",
-    image: team2,
-  },
-  {
-    name: "Full Name",
-    designation: "Designation",
-    image:team3,
-  },
-  {
-    name: "Full Name",
-    designation: "Designation",
-    image:team4,
-  },
-];
-const testimonials = [
-  {
-    text: "Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos",
-    image: testimonial1,
-    name: "Client Name",
-    profession: "Profession",
-  },
-  {
-    text: "Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos",
-    image: testimonial2,
-    name: "Client Name",
-    profession: "Profession",
-  },
-  {
-    text: "Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos",
-    image: testimonial3,
-    name: "Client Name",
-    profession: "Profession",
-  },
-  {
-    text: "Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos",
-    image: testimonial4,
-    name: "Client Name",
-    profession: "Profession",
-  },
-];
 
 const Home = () => {
-    const properties = [
-        { name: "Apartment", count: 123, image: pro1 },
-        { name: "Villa", count: 123, image: pro2 },
-        { name: "Home", count: 123, image: pro3 },
-        { name: "Office", count: 123, image: pro4 },
-        { name: "Building", count: 123, image: pro5 },
-        { name: "Townhouse", count: 123, image: pro6 },
-        { name: "Shop", count: 123, image: pro2 },
-        { name: "Garage", count: 123, image: pro1 },
-      ];
-    
       const sliderRef = useRef(null);
-
       const slideLeft = () => {
         if (sliderRef.current) {
           sliderRef.current.scrollBy({ left: -370, behavior: "smooth" }); // Smooth left slide
@@ -176,188 +144,228 @@ const Home = () => {
         }
       };
     
-  
+      const [currentImage, setCurrentImage] = useState(0);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentImage((prev) => (prev + 1) % images.length);
+        }, 5000);
+        return () => clearInterval(interval);
+      }, []);
+
+
+      const [selectedCategory, setSelectedCategory] = useState("All Properties");
+
+      const filteredProperties =
+      selectedCategory === "All Properties"
+        ? properties
+        : properties.filter((property) => property.category === selectedCategory);
+
   return (
     <>
+{/*----- -------------------------- Hero Section Start ----------------------------------------------- */}
     <div className="container">
-        <div className="banner_slide">
-           <div className="slider">
-             <div className="overlay">
-               <div className="hero-content">
-                    <h1 className="logo-text">Rental House</h1>
-                    <h2>BuyRentGo</h2>
-                    <p>PERSONAL REAL ESTATE CORPORATION</p>
-                    <button className="hero-btn">View My Listings</button>
-                    <div className="search-box">
-                      <input type="text" placeholder="Search Keyword" />
-                      <select>
-                      <option>Property Type</option>
-                      <option>Apartment</option>
-                      <option>House</option>
-                      <option>Villa</option>
-                      </select>
-                      <select>
-                      <option>Location</option>
-                      <option>New York</option>
-                      <option>Los Angeles</option>
-                      <option>Chicago</option>
-                      </select>
-                      <button>Search</button>
-                  </div>
-                  
-                </div>
-             </div>
-           </div>
+    <div className="hero-container" style={{ backgroundImage: `url(${images[currentImage]})` }}>
+      <div className="hero-overlay">
+        <h3 className="trust-badge">MOST TRUSTED</h3>
+        <h1 className="hero-title">
+          Perfect Firm For Selling Or Leasing Houses, Flats, And Villas
+        </h1>
+        <div className="search-box">
+          <div className="search-options">
+            <label><input type="radio" name="property" /> For Lease</label>
+            <label><input type="radio" name="property" /> For Rent</label>
+            <label><input type="radio" name="property" /> For Sale</label>
+          </div>
+          <div className="search-fields">
+            <input type="text" placeholder="Enter Keyword" />
+            <select>
+              <option>Property Type</option>
+            </select>
+            <input type="text" placeholder="Location" />
+            <button className="search-button">Search Property</button>
+          </div>
         </div>
+        <div className="stats">
+          <span className="stats-pro">🏠 Over 2M Properties</span>
+          <span  className="stats-pro">😀 46,789 people happy</span>
+          <span  className="stats-pro">⭐⭐⭐⭐⭐ 4.8 Top rated by People</span>
+        </div>
+      </div>
+    </div>
+ {/*----- -------------------------- Hero Section End ----------------------------------------------- */}
+ {/*----- -------------------------- Property Catagory Start ----------------------------------------------- */}
 
-        
-        
-   
-    <section className="property-types">
-      <h2>Property Types</h2>
-      <p>
-        Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem
-        kasd vero ipsum sit eirmod sit.
-      </p>
-      <div className="property-grid">
-        {properties.map((property, index) => (
-          <div key={index} className="property-card">
-            <div className="property-image"><img src={property.image} alt={property.name} /></div>
+    <div className="property-section">
+      <h4 className="newly-listed">NEWLY LISTED</h4>
+      <h2 className="heading">Search By Property Requirement</h2>
+      <div className="property-container">
+        {properties.map((property) => (
+          <div
+            key={property.id}
+            className={`property-card ${property.highlight ? "highlighted" : ""}`}
+          >
+            <div className="pro-icon">{property.icon}</div>
             <h3>{property.name}</h3>
-            <p className="property-count">{property.count} Properties</p>
+            <p>{property.count} Properties</p>
+            {property.highlight && <span className="view-details">View Details</span>}
           </div>
         ))}
       </div>
-    </section>
-    <div className="property-section">
-      {/* Left Side: Image */}
-      <div className="property-home-image">
-        <img src={property_img} alt="Property" />
-      </div>
-
-      {/* Right Side: Content */}
-      <div className="property-content">
-        <h2> Place To Find The Perfect Property</h2>
-        <p>
-          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
-          Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet.
-        </p>
-        <ul>
-          <li>Tempor erat elitr rebum at clita</li>
-          <li>Aliqu diam amet diam et eos</li>
-          <li>Clita duo justo magna dolore erat amet</li>
-        </ul>
-        <a href="#" className="property-button">
-          Read More
-        </a>
-      </div>
     </div>
+ {/*----- -------------------------- Property Catagory End----------------------------------------------- */}
 
-    <div className="real-estate-container">
-      <h2 className="heading">Property Listing</h2>
-      <p>
-        Eirmod sed ipsum dolor sit rebun labore magna erat. Tempor ut dolore
-        lorem kasd vero ipsum sit eirmod sit diam justo sed rebun.
-      </p>
-      <div className="real-estate-filters">
-        <button className="filter-btn active-filter">Featured</button>
-        <button className="filter-btn">For Sell</button>
-        <button className="filter-btn">For Rent</button>
-      </div>
-      
-           
-                   <div className="buysale-card-wrapper">
-                     {Properties_card.map((property) => (
-                       <div className="buysale-card" key={property.id}>
-                         <img src={property.img} alt={property.name} />
-                         <span className="buysale-status">{property.status}</span>
-                         <h3 className="card-h3">{property.name}</h3>
-                         <p className="card-p">Price: {property.price}</p>
-                         <div className="buysale-features">
-                           {property.features.map((feature, index) => (
-                             <span key={index}>{feature}</span>
-                           ))}
-                         </div>
-                         <button className="details-button">View Details</button>
-                       </div>
-                     ))}
-                   </div>  
-        
-    </div>
-    <div className="contact-agent-container">
-      <div className="contact-agent-card">
-        <div className="contact-agent-image">
-          <img src={agent} alt="Agent" />
+
+   {/*----- -------------------------- Hero Section Start----------------------------------------------- */}     
+    <div className="hero-section">
+      <div className="hero-images">
+        <img src={img1} alt="Luxury House" className="house-img" />
+        <img src={img2} alt="Modern Villa" className="villa-img" />
+        <div className="ratings">
+          <div className="rating-users">
+            <img src={test1} alt="User" />
+            <img src={test2} alt="User" />
+            <img src={test3} alt="User" />
+            <span className="more-users">69+</span>
+          </div>
+          <p>Top Rated around globe</p>
         </div>
-        <div className="contact-agent-content">
-          <h2>Contact With Our Certified Agent</h2>
-          <p>
-            Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd vero
-            ipsum sit sit diam justo sed vero dolor duo.
-          </p>
-          <div className="contact-agent-buttons">
-            <button className="call-btn">
-              <FaPhoneAlt className="icon" /> Make A Call
-            </button>
-            <button className="appointment-btn">
-              <BsCalendarCheck className="icon" /> Get Appointment
-            </button>
+      </div>
+
+      <div className="hero-content">
+        <h4 className="sub-heading">WORLDWIDE PROPERTIES</h4>
+        <h2 className="main-heading">
+          Welcome To Our Luxurious Properties, With All The Conveniences.
+        </h2>
+        <p className="description">
+          Arcu ac tortor dignissim convallis aenean et tortor at. Ac turpis egestas
+          sed tempus urna et. Quisque eu pellentesque erat, eget bibendum ipsum.
+        </p>
+        
+        <div className="features">
+          <div className="feature">
+            <span className="icon">❓</span>
+            <h3>Answer Questions</h3>
+            <p>Phasellus ornare scelerisque eleifend donec pretium nec.</p>
+          </div>
+          <div className="feature">
+            <span className="icon">💬</span>
+            <h3>Select a Quote</h3>
+            <p>Morbi quis commodo odio aenean fames ac vel sed.</p>
+          </div>
+          <div className="feature">
+            <span className="icon">💼</span>
+            <h3>Your Belongings</h3>
+            <p>Neque sodales et etiam sit amet nisl purus in mollis.</p>
+          </div>
+          <div className="feature">
+            <span className="icon">🏠</span>
+            <h3>Personal Liability</h3>
+            <p>Vitae justo eget magna fermentum iaculis lobortis.</p>
+          </div>
+        </div>
+
+        <div className="buttons">
+          <button className="explore-btn">Explore Properties</button>
+          <div className="call-btn">
+            <FaPhoneAlt className="phone-icon" />
+            <span>Call Us Anytime</span>
+            <p>+00 123 456789</p>
           </div>
         </div>
       </div>
     </div>
-    <section className="agents-wrapper">
-      <h2 className="agents-heading">Property Agents</h2>
-      <p className="agents-subtext">
-        Eirmod sed ipsum dolor sit rebun labore magna erat. Tempor ut dolore lorem kasd vero
-        ipsum sit eirmod sit. Ipsum diam justo sed rebun vero dolor duo.
-      </p>
-      <div className="agents-grid">
-        {agents.map((agent, index) => (
-          <div className="agent-item" key={index}>
-            <img src={agent.image} alt={agent.name} className="agent-photo" />
-            <div className="agent-details">
-              <div className="agent-social">
-                <FaFacebookF />
-                <FaTwitter />
-                <FaInstagram />
+
+{/*----- -------------------------- property card start ----------------------------------------------- */}         
+  <div className="property-section">
+      <h3 className="section-subtitle">EXPLORE VILLAS</h3>
+      <h2 className="section-title">Comfort Living Solution</h2>
+
+      <div className="property-filters">
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`filter-btn ${selectedCategory === category ? "active" : ""}`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      <div className="home-property-list">
+        {Properties_card.map((property) => (
+          <div className="home-property-card" key={property.id}>
+            <img src={property.image} alt={property.name} className="property-image" />
+            <span className="property-price">{property.price}</span>
+            {property.tag && <span className="property-tag">{property.tag}</span>}
+            <div className="property-info">
+              <h3 className="property-name">{property.name}</h3>
+              <p className="property-location">{property.location}</p>
+              <div className="property-details">
+                <span>{property.area}</span>
+                <span>{property.beds}</span>
+                <span>{property.baths}</span>
               </div>
-              <h3 className="agent-name">{agent.name}</h3>
-              <p className="agent-role">{agent.designation}</p>
             </div>
           </div>
         ))}
       </div>
-    </section>
-    
-    <section className="testimonial-section">
-      <h2 className="testimonial-title">Our Clients Say!</h2>
-      <p className="testimonial-subtitle">
-        Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.
-      </p>
-      <div className="testimonial-container">
-        <button className="slider-btn left" onClick={slideLeft}>
-          <FaArrowLeft />
-        </button>
-        <div className="testimonial-list" ref={sliderRef}>
-          {testimonials.map((testimonial, index) => (
-            <div className="testimonial-card" key={index}>
-              <p className="testimonial-text">{testimonial.text}</p>
-              <div className="testimonial-client">
-                <img src={testimonial.image} alt={testimonial.name} className="client-photo" />
-                <div>
-                  <h4 className="client-name">{testimonial.name}</h4>
-                  <p className="client-profession">{testimonial.profession}</p>
+    </div>
+  {/*----- -------------------------- property card end ----------------------------------------------- */}         
+  {/*----- -------------------------- blog section start ----------------------------------------------- */}         
+
+  <section className="home-blog-section">
+      <h3 className="home-sub-heading">INSTANT UPDATES</h3>
+      <h2 className="home-main-heading">Real Estate Blogs & News</h2>
+      <div className="home-blog-container">
+        <div className="home-featured-blog">
+          <img src={blogs[0].image} alt="Featured Blog" className="home-blog-image" />
+          <div className="home-blog-content">
+            <div className="home-tag-container">
+              {blogs[0].tags.map((tag, index) => (
+                <span key={index} className="home-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <p className="home-date">{blogs[0].date}</p>
+            <h3 className="home-blog-title">{blogs[0].title}</h3>
+            <p className="home-blog-description">{blogs[0].description}</p>
+            <a href="#" className="home-read-more">
+              Read More →
+            </a>
+          </div>
+        </div>
+
+        <div className="home-blog-list">
+          {blogs.slice(1).map((blog) => (
+            <div key={blog.id} className="home-blog-card">
+              <img src={blog.image} alt="Blog" className="home-blog-card-image" />
+              <div className="home-blog-card-content">
+                <div className="home-tag-container">
+                  {blog.tags.map((tag, index) => (
+                    <span key={index} className="home-tag">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+                <p className="home-date">{blog.date}</p>
+                <h3 className="home-blog-title">{blog.title}</h3>
+                <p className="home-blog-description">{blog.description}</p>
+                <a href="#" className="home-read-more">
+                  Read More →
+                </a>
               </div>
             </div>
           ))}
         </div>
-        <button className="slider-btn right" onClick={slideRight}>
-          <FaArrowRight />
-        </button>
       </div>
-    </section>
+      </section>
+  {/*----- --------------------------blog section end ----------------------------------------------- */}         
+
+    
+    
 
     </div>    
     </>

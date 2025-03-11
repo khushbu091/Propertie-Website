@@ -1,125 +1,108 @@
-/* Navbar container */
-.navbar {
-  position: sticky;
-  top: 0;
+/* Header Styles */
+body {
+  padding-top: 80px; /* Navbar ki height ke according adjust karein */
+}
+header {
   width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #000;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 }
 
-  
-  /* Logo */
-  .logo{
-    max-width: 80px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: goldenrod;
+.header-top {
+  position: fixed;
+  background-color: #0c2d48;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0c2d48;
+  z-index: 1100; /* Navbar se upar rahe */
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  color: orange;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.header-bottom {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(5, 5, 10, 0.8); /* Dark Background on Scroll */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
+}
+.navbar.scrolled {
+  background-color: rgba(5, 5, 10, 0.8); /* Dark Background on Scroll */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+}
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.highlight {
+  color: orange;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover, .active {
+  color: orange;
+}
+
+.nav-login-btn {
+  background-color: orange;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-login-btn:hover {
+  background-color: #e69500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-top, .header-bottom {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .logo img {
-    width: 60px;
-    height: auto;
-    margin-right: 10px;
+
+  .left, .right, nav {
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  /* Nav links */
-  .nav-links {
-    display: flex;
-    gap: 20px;
+
+  nav {
+    margin-top: 10px;
   }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: goldenrod;
-    font-weight: 800;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: gold;
-  }
-  
-  /* Dropdown */
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 150px;
-    top: 25px;
-    left: 0;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #222;
-  }
-  
-  .dropdown-content a:hover {
-    background: #f8f8f8;
-  }
-  
-  /* login/register Button */
-  
-  .add-btn {
-    background: goldenrod;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  
-  .add-btn:hover {
-    background: gold;
-  }
-  
-  /* Mobile Menu */
-  .menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* Responsive Styles */
-  @media screen and (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background: white;
-      padding: 10px;
-    }
-  
-    .nav-links.open {
-      display: flex;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
-  }
-  
+}
