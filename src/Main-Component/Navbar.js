@@ -54,7 +54,7 @@ const Navbar = () => {
       
 
       <div className={`header-bottom ${scrolled ? "scrolled" : ""}`}>
-        <h1 className="logo">Veedoo <span className="highlight">^^</span></h1>
+        <h1 className="logo">BuyRentGo <span className="highlight">^^</span></h1>
         <nav>
           <a href="#" className="active">Home</a>
           <a href="#">Pages</a>

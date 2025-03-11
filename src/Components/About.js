@@ -1,121 +1,153 @@
 
-import property_img from "../Image/ab.jpg"
-import { FaHeadset, FaSearch, FaBolt, FaClipboardCheck, FaTrophy, FaIdCard } from "react-icons/fa";
 import React from "react";
 import "../Styles-css/About.css"; 
+import { FaSmile, FaHome, FaUserTie } from "react-icons/fa";
+import { FaPaintBrush, FaCouch, FaTree, FaBuilding, FaTools } from "react-icons/fa";
 
-const About = () => {
-    const values = [
-        {
-          icon: <FaHeadset />,
-          title: "Excellent Customer Service",
-          description: "We provide 24/7 support and ensure customer satisfaction at all times."
-        },
-        {
-          icon: <FaSearch />,
-          title: "Attention to Detail",
-          description: "Every project is handled with precision and care to meet the highest standards."
-        },
-        {
-          icon: <FaBolt />,
-          title: "Quick Response",
-          description: "Our team ensures fast and effective solutions to your queries and concerns."
-        },
-        {
-          icon: <FaClipboardCheck />,
-          title: "Years of Experience",
-          description: "With over a decade in the industry, we bring expertise and knowledge to every task."
-        },
-        {
-          icon: <FaTrophy />,
-          title: "Leader in the Industry",
-          description: "We have been recognized as a top company in our field for excellence and innovation."
-        },
-        {
-          icon: <FaIdCard />,
-          title: "Certified and Licensed",
-          description: "Our business is fully certified, ensuring compliance with industry regulations."
-        }
-      ];
-    
+import about_main from "../Image/thumb-slider-img-1.jpg"
+import about_img1 from "../Image/thumb-slider-img-2.jpg"
+import about_img2 from "../Image/thumb-slider-img-3.jpg"
+import about_img3 from "../Image/thumb-slider-img-4.jpg"
+
+import gallery1 from "../Image/gallery-img-1.jpg"
+import gallery2 from "../Image/gallery-img-2.jpg"
+import gallery3 from "../Image/gallery-img-2.jpg"
+import gallery4 from "../Image/gallery-img-3.jpg"
+import gallery5 from "../Image/gallery-img-5.jpg"
+
+const features = [
+  { id: "01", title: "Easy To Rent", description: "Lacus sed turpis tincidunt id aliquet risus feugiat in ante. Eu facilisis sed odio.", icon: <FaHome /> },
+  { id: "02", title: "Carefully Crafted", description: "Adipiscing bibendum est ultricies integer quis auctor elit sed vulputate quam lacus.", icon: <FaPaintBrush /> },
+  { id: "03", title: "In-built Wardrobe", description: "Cras sed felis eget velit aliquet. Vitae congue eu consequat ac felis donec odio.", icon: <FaCouch /> },
+  { id: "04", title: "Lavish Greenary", description: "Facilisis volutpat est velit egestas dui id. Diam maecenas sed enim ut sem viverra.", icon: <FaTree /> },
+  { id: "05", title: "Spacious Outdoor", description: "Non diam phasellus vestibulum lorem sed risus ultricies tristique nulla pulvinar.", icon: <FaBuilding /> },
+  { id: "06", title: "Planned Construction", description: "Montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada.", icon: <FaTools /> },
+];
+
+
+const images = [
+  { src: gallery1, alt: "Modern House" },
+  { src: gallery2, alt: "Modern Kitchen" },
+  { src:gallery5, alt: "Living Room" },
+  { src: gallery4, alt: "Dining Room" },
+  { src: gallery3, alt: "Bar Area" },
+  { src: gallery1, alt: "Bar Area" },
+
+];
+
+const About = () => {   
   return (
     <>
-    <div className="container">
-    <section className="about-section">
+    <section className="about-hero">
       <div className="about-overlay">
-        <h2>About Us</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-          luctus nec ullamcorper mattis, pulvinar dapibus leo.
-        </p>
+        <div className="about-container">
+          <p className="about-location">
+            📍 3911 Firestone Blvd, South Gate, CA 90280, United States
+          </p>
+          <h1 className="about-title">Welcome to Your Next Adventure</h1>
+          <p className="about-description">
+            Duis imperdiet purus eget tortor ornare, quis malesuada dui pharetra.
+            In quis mauris facilisis, pulvinar felis ac, molestie ligula. Mauris
+            lacus massa, facilisis ac lacus ac, condimentum vulputate est.
+            Vestibulum sit amet felis eu dui accumsan lacinia eget sed orci.
+          </p>
+          <div className="about-buttons">
+            <button className="about-btn about-tour">Take A Tour</button>
+            <button className="about-btn about-quote">Get A Quote</button>
+          </div>
+        </div>
       </div>
     </section>
-    <div className="property-section">
-      {/* Left Side: Image */}
-      <div className="property-home-image">
-        <img src={property_img} alt="Property" />
-      </div>
+    <section className="living-section">
+      <div className="living-container">
+        {/* Left Side: Image */}
+        <div className="living-image">
+          <img src={about_main} alt="Luxury Pool" />
+        </div>
 
-      {/* Right Side: Content */}
-      <div className="property-content">
-        <h2>#1 Place To Find The Perfect Property</h2>
+        {/* Right Side: Text & Stats */}
+        <div className="living-content">
+          <p className="living-subtitle">CONTEMPORARY LIVING</p>
+          <h2 className="living-title">
+            Experience the Epitome of Refinement and Grandeur in Every Detail Of
+            Beauty
+          </h2>
+          <p className="living-description">
+            Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae
+            elementum. Turpis egestas pretium aenean pharetra magna ac. Blandit
+            massa enim nec dui nunc. Magnis dis parturient montes nascetur
+            ridiculus mus mauris.
+          </p>
+
+          {/* Statistics Section */}
+          <div className="living-stats">
+            <div className="stat">
+              <FaSmile className="stat-icon" />
+              <p className="stat-value">30K</p>
+              <p className="stat-label">Happy Customers</p>
+            </div>
+            <div className="stat">
+              <FaHome className="stat-icon" />
+              <p className="stat-value">20K</p>
+              <p className="stat-label">Homes Sold</p>
+            </div>
+            <div className="stat">
+              <FaUserTie className="stat-icon" />
+              <p className="stat-value">35+</p>
+              <p className="stat-label">Agents</p>
+            </div>
+          </div>
+
+          {/* Image Gallery */}
+          <div className="living-gallery">
+            <img src={about_img1} alt="House 1" />
+            <img src={about_img2} alt="House 2" />
+            <img src={about_img3} alt="House 3" />
+            <img src={about_main} alt="House 4" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="features-section">
+      <div className="features-container">
+        <p className="features-subtitle">SIGNATURE FEATURES</p>
+        <h2 className="features-title">Masterful Design: A Showcase of Quality and Craftsmanship</h2>
+
+        <div className="features-grid">
+          {features.map((feature) => (
+            <div className="feature-card" key={feature.id}>
+              <div className="feature-id">{feature.id}</div>
+              <div className="feature-content">
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-description">{feature.description}</p>
+              </div>
+              <div className="feature-icon">{feature.icon}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+
+    <div className="gallery-container">
+      <div className="gallery-text">
+        <h5>MARVELLOUS WORLD</h5>
+        <h2>An Image Speaks Volumes: Explore the Exhibition.</h2>
         <p>
-          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
-          Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet.
+          Ut felis sem, placerat vel sollicitudin ut, mollis non dui. Donec
+          vehicula scelerisque mauris facilis.
         </p>
-        <ul>
-          <li>Tempor erat elitr rebum at clita</li>
-          <li>Aliqu diam amet diam et eos</li>
-          <li>Clita duo justo magna dolore erat amet</li>
-        </ul>
-        <a href="#" className="property-button">
-          Read More
-        </a>
+        <button className="view-button">View All Photos</button>
       </div>
-    </div>
 
-    <section className="values-section">
-      <h2 className="values-title">Our shared company values have been our north star</h2>
-      <p className="values-subtitle">
-        Our commitment to excellence is reflected in our values. We strive to provide the best services possible.
-      </p>
-
-      <div className="values-grid">
-        {values.map((item, index) => (
-          <div key={index} className="value-card">
-            <div className="icon">{item.icon}</div>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+      <div className="gallery-grid">
+        {images.map((image, index) => (
+          <div key={index} className="gallery-item">
+            <img src={image.src} alt={image.alt} />
           </div>
         ))}
       </div>
-    </section>
-    <section className="about-property">
-      <h2> About Our Property Services</h2>
-      <p>
-        At <strong>[Your Website Name]</strong>, we make buying, selling, and renting properties a seamless experience. 
-        Whether you're looking for a luxury villa, a budget-friendly apartment, or a commercial space, 
-        we have a wide range of listings to match your needs.
-      </p>
-
-      <h3> Why Choose Us?</h3>
-      <ul>
-        <li>✅ <strong>Verified Properties:</strong> 100% authentic listings with detailed information.</li>
-        <li>✅ <strong>Best Price Guarantee:</strong> Competitive market rates with no hidden charges.</li>
-        <li>✅ <strong>Expert Assistance:</strong> Professional real estate agents to guide you.</li>
-        <li>✅ <strong>Easy Financing:</strong> Get connected with mortgage and loan providers.</li>
-      </ul>
-
-      <h3> Our Services</h3>
-      <ul>
-        <li>🔹 <strong>Buy & Sell Properties:</strong> Hassle-free transactions with top deals.</li>
-        <li>🔹 <strong>Rent & Lease:</strong> Find the perfect home or tenant with ease.</li>
-        <li>🔹 <strong>Investment Advisory:</strong> Expert guidance for profitable property investments.</li>
-        <li>🔹 <strong>Legal Support:</strong> Secure your transactions with legal assistance.</li>
-      </ul>
-
-      <p className="contact-info">📞 <strong>Contact us today to find your dream property!</strong></p>
-    </section>
     </div>
     </>
   );
