@@ -1,0 +1,120 @@
+/* PropertyListings.css */
+.property-listings {
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('../Image//s6.jpg') no-repeat center center/cover;
+    color: white;
+    padding-top: 150px;
+    margin-bottom: 30px;
+
+  }
+  
+  /* SearchBar.css */
+.search-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+  }
+  
+  .search-bar {
+    display: flex;
+    gap: 15px;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-input,
+  .search-select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1;
+  }
+  
+  .location-input {
+    position: relative;
+  }
+  
+  .search-button {
+    background: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .search-bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .search-input,
+    .search-select,
+    .search-button {
+      width: 100%;
+    }
+  }
+  
+
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+    transition: 0.3s ease;
+  }
+  
+  .pagination-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .pagination-btn.active {
+    background-color: #ea580c;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .pagination-container {
+      gap: 5px;
+    }
+    
+    .pagination-btn {
+      width: 35px;
+      height: 35px;
+      font-size: 14px;
+    }
+  }
+  

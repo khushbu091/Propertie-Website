@@ -8,6 +8,8 @@ import Agent from "./Components/Agent";
 import LoginForm from "./Components/Login";
 import Blog from "./Components/Blog";
 import Add_property_form from "./Components/Add_property_form";
+import PropertyListings from "./Components/Property_Listing";
+
 // ---------------Admin pannel --------------------------------------------------
 import AdminLogin from "./Admin-Pannel/Admin-Component/AdminLogin";
 import AdminDashboard from "./Admin-Pannel/Admin-Component/AdminDashboard";
@@ -30,6 +32,8 @@ const App=()=> {
         <Route path="blog" element={<Blog />} />
         <Route path="login" element={<LoginForm />} />
         <Route path="addpropertyform" element={<Add_property_form />} />
+        <Route path="propertylisting" element={<PropertyListings />} />
+
         </Route>
 
         <Route path="adminlogin" element={<AdminLogin/>} />

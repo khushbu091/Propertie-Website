@@ -60,7 +60,7 @@ const Navbar = () => {
           <a href="#">Pages</a>
           <a href="#">Real Estate</a>
           <a href="#">News</a>
-          <a href="#">Contact Us</a>
+          <a href="contact">Contact Us</a>
         </nav>
         <button className="nav-login-btn">Login/Register</button>
       </div>
