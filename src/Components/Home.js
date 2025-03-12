@@ -20,6 +20,7 @@ import blog_main from "../Image/Blog-16.jpg"
 import blog1 from "../Image/blog-image-1.jpg"
 import blog2 from "../Image/blog-image-1.jpg"
 import blog3 from "../Image/blog-image-4.jpg"
+import { Link } from "react-router-dom";
 
 
 
@@ -295,7 +296,7 @@ const Home = () => {
 
       <div className="home-property-list">
         {Properties_card.map((property) => (
-          <div className="home-property-card" key={property.id}>
+         <Link to="propertyDetails"> <div className="home-property-card" key={property.id}>
             <img src={property.image} alt={property.name} className="property-image" />
             <span className="property-price">{property.price}</span>
             {property.tag && <span className="property-tag">{property.tag}</span>}
@@ -309,6 +310,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,0 +1,246 @@
+/* Property Image Section */
+.details-page-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 20px;
+  }
+  
+  .details-page-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+  }
+  
+  /* Property Details Card */
+  .details-page-card {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0c2d48;
+    color: white;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Detail Items */
+  .details-page-item {
+    flex: 1;
+  }
+  
+  .details-page-icon {
+    color: orange;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  .details-page-label {
+    display: block;
+    font-size: 12px;
+    color: #e69500;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .details-page-text {
+    margin: 5px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    
+    
+    .details-page-card {
+      flex-wrap: wrap;
+      padding: 15px;
+    }
+    
+    .details-page-item {
+      flex: 50%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+   
+    .details-page-container {
+      width: 100%;
+    }
+  
+    .details-page-card {
+      flex-direction: column;
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .details-page-item {
+      margin-bottom: 10px;
+    }
+  
+    .details-page-text {
+      font-size: 16px;
+    }
+  
+    .details-page-icon {
+      font-size: 20px;
+    }
+  }
+
+  /* General Styles */
+.floor-plans {
+    font-family: "Poppins", sans-serif;
+    background-color: #f5f7fa;
+    padding: 50px 5%;
+    text-align: center;
+  }
+  
+  .floor-plans-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1d3557;
+  }
+  
+  .floor-plans-subtitle {
+    color: #ff6600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  
+  /* Grid Layout */
+  .floor-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  /* Card Style */
+  .floor-plan-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .floor-plan-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .floor-plan-badge {
+    background: #1d3557;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  .floor-plan-info {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .floor-plan-price {
+    color: #ff6600;
+    font-weight: bold;
+  }
+  
+  /* Image & Description */
+  .floor-plan-content {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+  }
+  
+  .floor-plan-image {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .floor-plan-description {
+    font-size: 14px;
+    color: #777;
+    flex: 1;
+  }
+  
+
+  .floor-plan-close:hover {
+    background: #e65c00;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .floor-plans-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .floor-plan-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .floor-plan-image {
+      width: 100%;
+      max-width: 250px;
+      margin: auto;
+    }
+  
+    .floor-plan-description {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .floor-plans-title {
+      font-size: 24px;
+    }
+  
+    .floor-plans-grid {
+      gap: 20px;
+    }
+  
+    .floor-plan-card {
+      padding: 15px;
+    }
+  
+    .floor-plan-info {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .floor-plan-image {
+      max-width: 200px;
+    }
+  
+    .floor-plan-close {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
+  

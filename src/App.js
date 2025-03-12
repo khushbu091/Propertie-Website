@@ -9,6 +9,7 @@ import LoginForm from "./Components/Login";
 import Blog from "./Components/Blog";
 import Add_property_form from "./Components/Add_property_form";
 import PropertyListings from "./Components/Property_Listing";
+import Details_page from "./Components/Details_page";
 
 // ---------------Admin pannel --------------------------------------------------
 import AdminLogin from "./Admin-Pannel/Admin-Component/AdminLogin";
@@ -33,6 +34,8 @@ const App=()=> {
         <Route path="login" element={<LoginForm />} />
         <Route path="addpropertyform" element={<Add_property_form />} />
         <Route path="propertylisting" element={<PropertyListings />} />
+        <Route path="/home/propertyDetails" element={<Details_page />} />
+
 
         </Route>
 
