@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,20 +52,33 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Bar */}
-      
-
       <div className={`header-bottom ${scrolled ? "scrolled" : ""}`}>
         <h1 className="logo">BuyRentGo <span className="highlight">^^</span></h1>
         <nav>
-          <a href="#" className="active">Home</a>
-          <a href="#">Pages</a>
-          <a href="#">Real Estate</a>
+          <a href="home" className="active">Home</a>
+          <a href="about">About</a>
+          
+          {/* Real Estate with Submenu */}
+          <div 
+            className="nav-item has-submenu"
+            onMouseEnter={() => setSubmenuOpen(true)}
+            onMouseLeave={() => setSubmenuOpen(false)}
+          >
+            <a href="#" className="submenu-toggle">Real Estate</a>
+            {submenuOpen && (
+              <div className="submenu">
+                <a href="propertylisting"> Property Listing</a>
+                <a href="buysale">Rent Property</a>
+                <a href="#">Commercial Spaces</a>
+              </div>
+            )}
+          </div>
+
           <a href="#">News</a>
           <a href="contact">Contact Us</a>
         </nav>
         <button className="nav-login-btn">Login/Register</button>
       </div>
-     
     </header>
   );
 };

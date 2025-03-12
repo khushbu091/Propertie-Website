@@ -60,7 +60,10 @@ const BuySale = () => {
 
   return (
     <>
-    <div className="container">
+      <section className="hero">
+        <h1>Property Listing Types</h1>
+        <p>Home - Property Listings</p> 
+      </section>
     <div className="buy-sale-container">
       {/* Sidebar */}
       <div className="search-filters">
@@ -139,7 +142,7 @@ const BuySale = () => {
         </div>
       </div>
     </div>
-    </div>
+    
     </>
   );
 };
