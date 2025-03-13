@@ -56,6 +56,22 @@ const BuySale = () => {
         status: "Sold",
         features: [5, 2, 2, 1],
       },
+      {
+        id: 6,
+        name: "Royal Inn",
+        price: "$234,900",
+        img: h6,
+        status: "Sold",
+        features: [5, 2, 2, 1],
+      },
+      {
+        id: 6,
+        name: "Royal Inn",
+        price: "$234,900",
+        img: h6,
+        status: "Sold",
+        features: [5, 2, 2, 1],
+      },
   ];
 
   return (

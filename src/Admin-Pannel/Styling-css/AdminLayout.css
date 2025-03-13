@@ -1,0 +1,240 @@
+/* Admin Navbar Styling */
+.admin-nav {
+    width: calc(100% - 250px); /* Sidebar ki width adjust karein */
+    height: 60px; /* Proper height set karein */
+    background-color: #0c2d48;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 250px; /* Sidebar ke baad start hoga */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000; /* Navbar ko top pe rakhne ke liye */
+  }
+  
+  .admin-nav-left, .admin-nav-center, .admin-nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .admin-icon {
+    font-size: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .admin-notification {
+    position: relative;
+  }
+  
+  .admin-dot {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .admin-search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+  }
+  
+  .admin-search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+    width: 100px;
+  }
+  
+  .admin-search-icon {
+    color: black;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .admin-search-box {
+      width: 120px;
+    }
+    .admin-icon {
+      margin: 0 5px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .admin-nav-center {
+      display: none;
+    }
+    .admin-search-box {
+      width: 80px;
+    }
+  }
+  /* Sidebar Styling */
+.admin-sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #f8f9fa;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  z-index: 999; /* Navbar ke neeche rahe */
+  }
+  
+  /* Profile Section */
+  .admin-profile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .admin-home-btn {
+    background-color: #0c2d48;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin-home-btn span {
+    margin-left: 5px;
+   
+  }
+  
+  .admin-role {
+    font-size: 14px;
+    color: #6c757d;
+    padding-top: 10px;
+  }
+  
+  .admin-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px 0;
+    border: 3px solid white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-role-text {
+    color: #6c757d;
+    font-size: 14px;
+  }
+  
+  .admin-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .admin-social-icons svg {
+    cursor: pointer;
+    color: #7d6a91;
+  }
+  
+  /* Sidebar Menu */
+  .admin-menu {
+    width: 100%;
+  }
+  
+  .admin-menu-title {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .admin-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin-menu li {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #495057;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .admin-menu li svg {
+    margin-right: 10px;
+    color: #6c757d;
+  }
+  
+  .admin-menu li:hover,
+  .admin-menu .active {
+    background-color: #0c2d48;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .admin-menu .active svg {
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .admin-sidebar {
+      width: 200px;
+    }
+    .admin-avatar {
+      width: 60px;
+      height: 60px;
+    }
+    .admin-menu li {
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .admin-sidebar {
+      width: 100px;
+    }
+    .admin-brand span,
+    .admin-role-text,
+    .admin-social-icons,
+    .admin-menu-title {
+      display: none;
+    }
+    .admin-avatar {
+      width: 50px;
+      height: 50px;
+    }
+    .admin-menu li {
+      justify-content: center;
+    }
+    .admin-menu li svg {
+      margin: 0;
+    }
+  }
+  

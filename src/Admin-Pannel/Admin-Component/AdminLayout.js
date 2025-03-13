@@ -1,78 +1,101 @@
-import { useState } from "react";
-import { FiBell, FiMail } from "react-icons/fi";
+import React from "react";
+import { FaSearch, FaPowerOff, FaCog, FaBell, FaEnvelope, FaCalendarAlt, FaExchangeAlt } from "react-icons/fa";
+import { FaHome, FaUser, FaFacebookF, FaTwitter, FaInstagram, FaColumns, FaBuilding, FaUsers, FaClipboardCheck, FaTh, FaFolder } from "react-icons/fa";
 import { Outlet, Link, useNavigate } from "react-router-dom";
-import { logout } from "./Auth";
-import logo from "../../Image/home-logo.png";
 
+import "../Styling-css/AdminLayout.css";
 const AdminLayout = () => {
-  const navigate = useNavigate();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
+  
 
   return (
-    <div className={`admin-dashboard ${isSidebarOpen ? "sidebar-open" : ""}`}>
-      {/* Navbar */}
-      <nav className="admin-navbar">
-        <Link to="/admin">
-          <div className="logo">
-            <img src={logo} alt="Logo" />
-            <span>BuyRentGo</span>
-          </div>
-        </Link>
+    <>
+    <nav className="admin-nav">
+      <div className="admin-nav-left">
+        <div className="admin-logo">BuyRentGo</div>
+        <FaExchangeAlt className="admin-icon" />
+      </div>
 
-        <div className="top-icons">
-          <FiBell />
-          <FiMail />
+      <div className="admin-nav-center">
+        <FaCalendarAlt className="admin-icon" />
+        <FaEnvelope className="admin-icon" />
+        <FaUsers className="admin-icon" />
+        <div className="admin-notification">
+          <FaBell className="admin-icon" />
+          <span className="admin-dot"></span>
         </div>
+        <div className="admin-search-box">
+          <input type="text" placeholder="Search..." />
+          <FaSearch className="admin-search-icon" />
+        </div>
+      </div>
 
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+      <div className="admin-nav-right">
+        <FaPowerOff className="admin-icon" />
+        <FaCog className="admin-icon" />
+      </div>
+    </nav>
+
+    <aside className="admin-sidebar">
+      {/* Profile Section */}
+      <div className="admin-profile">
+        <div className="admin-brand">
+          <button className="admin-home-btn">
+            <FaHome />
+            <span>Oreo</span>
+          </button>
+          <span className="admin-role">
+            <FaUser /> Agent
+          </span>
+        </div>
+        <img
+          src="https://randomuser.me/api/portraits/men/45.jpg"
+          alt="Profile"
+          className="admin-avatar"
+        />
+        <h3>Michael</h3>
+        <p className="admin-role-text">Agent</p>
+        <div className="admin-social-icons">
+          <FaFacebookF />
+          <FaTwitter />
+          <FaInstagram />
+        </div>
+      </div>
+
+      {/* Sidebar Menu */}
+      <nav className="admin-menu">
+        <h4 className="admin-menu-title">-- MAIN</h4>
+        <ul>
+          <li className="active">
+            <FaColumns /> Dashboard
+          </li>
+          <li>
+            <FaBuilding /> Property
+          </li>
+          <li>
+            <FaBuilding /> Types
+          </li>
+          <li>
+            <FaUsers /> Agents
+          </li>
+          <li>
+            <FaClipboardCheck /> Contract
+          </li>
+          <li>
+            <FaTh /> App
+          </li>
+          <li>
+            <FaUsers /> Groups
+          </li>
+          <li>
+            <FaFolder /> File Manager
+          </li>
+        </ul>
       </nav>
-
-      {/* Sidebar */}
-      <aside className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
-        <button className="sidebar-toggle" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-          {isSidebarOpen ? "←" : "→"}
-        </button>
-
-        <nav>
-          <ul>
-            <li><Link to="/admin" className="side-menu-li">Admin Dashboard</Link></li>
-            <li><Link to="/admin/rent-listing" className="side-menu-li">Rent Listing</Link></li>
-            <li><Link to="/admin/sale-listing" className="side-menu-li">Sale Listing</Link></li>
-            <li><Link to="/admin/contact-info" className="side-menu-li">Contact Information</Link></li>
-
-            {/* Agent Dropdown */}
-            <div className="dropdown">
-              <span className="dropdown-toggle">Agent ▼</span>
-              <div className="dropdown-content">
-                <Link to="/admin/add-agent">Add Agent</Link>
-                <Link to="/admin/agent-profile">Agent Profile</Link>
-                <Link to="/admin/all-agents">All Agents</Link>
-              </div>
-            </div>
-
-            {/* Property Dropdown */}
-            <div className="dropdown">
-              <span className="dropdown-toggle">Property ▼</span>
-              <div className="dropdown-content">
-                <Link to="/admin/add-property">Add Property</Link>
-                <Link to="/admin/property-list">Property List</Link>
-                <Link to="/admin/property-details">Property Details</Link>
-              </div>
-            </div>
-          </ul>
-        </nav>
-      </aside>
-
-      {/* Main Content */}
+    </aside>
       <main className="main-content">
         <Outlet />
       </main>
-    </div>
+    </>
   );
 };
 
