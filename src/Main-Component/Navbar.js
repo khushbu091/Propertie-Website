@@ -77,10 +77,10 @@ const Navbar = () => {
           <a href="#">News</a>
           <a href="contact">Contact Us</a>
         </nav>
-        <button className="nav-login-btn">Login/Register</button>
+        <button className="nav-login-btn"><a href="login">Login/Register</a></button>
       </div>
     </header>
   );
-};
+}; 
 
 export default Navbar;
