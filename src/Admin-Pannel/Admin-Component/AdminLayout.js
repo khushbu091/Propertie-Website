@@ -2,10 +2,12 @@ import React from "react";
 import { FaSearch, FaPowerOff, FaCog, FaBell, FaEnvelope, FaCalendarAlt, FaExchangeAlt } from "react-icons/fa";
 import { FaHome, FaUser, FaFacebookF, FaTwitter, FaInstagram, FaColumns, FaBuilding, FaUsers, FaClipboardCheck, FaTh, FaFolder } from "react-icons/fa";
 import { Outlet, Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import "../Styling-css/AdminLayout.css";
 const AdminLayout = () => {
   
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
   return (
     <>
@@ -62,34 +64,31 @@ const AdminLayout = () => {
       </div>
 
       {/* Sidebar Menu */}
-      <nav className="admin-menu">
         <h4 className="admin-menu-title">-- MAIN</h4>
-        <ul>
-          <li className="active">
-            <FaColumns /> Dashboard
-          </li>
-          <li>
-            <FaBuilding /> Property
-          </li>
-          <li>
-            <FaBuilding /> Types
-          </li>
-          <li>
-            <FaUsers /> Agents
-          </li>
-          <li>
-            <FaClipboardCheck /> Contract
-          </li>
-          <li>
-            <FaTh /> App
-          </li>
-          <li>
-            <FaUsers /> Groups
-          </li>
-          <li>
-            <FaFolder /> File Manager
-          </li>
-        </ul>
+        <nav className="admin-menu">
+
+          <a href="#"> <FaColumns /> Dashboard</a>
+          {/* Real Estate with Submenu */}
+          <div 
+            className="nav-item has-submenu"
+            onMouseEnter={() => setSubmenuOpen(true)}
+            onMouseLeave={() => setSubmenuOpen(false)}
+          >
+            <a href="#" className="submenu-toggle"><FaBuilding />Property</a>
+            {submenuOpen && (
+              <div className="submenu">
+                <a href="/admin/addpropertyform">Add Property</a>
+                <a href="buysale">Rent Property</a>
+                <a href="#">Commercial Spaces</a>
+              </div>
+            )}
+          </div>          
+          <a href="#"><FaBuilding /> Types</a>
+          <a href="#"><FaUsers /> Agents</a>
+          <a href="#"><FaClipboardCheck /> Contract</a>
+          <a href="#"><FaTh /> App</a>
+          <a href="#"><FaUsers /> Groups</a>
+          <a href="#"><FaFolder /> File Manager</a>        
       </nav>
     </aside>
       <main className="main-content">

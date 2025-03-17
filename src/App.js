@@ -7,7 +7,6 @@ import BuySale from "./Components/BuySale";
 import Agent from "./Components/Agent";
 import LoginForm from "./Components/Login";
 import Blog from "./Components/Blog";
-import Add_property_form from "./Components/Add_property_form";
 import PropertyListings from "./Components/Property_Listing";
 import Details_page from "./Components/Details_page";
 
@@ -16,6 +15,7 @@ import AdminLogin from "./Admin-Pannel/Admin-Component/AdminLogin";
 import AdminDashboard from "./Admin-Pannel/Admin-Component/AdminDashboard";
 import AdminLayout from "./Admin-Pannel/Admin-Component/AdminLayout";
 import ProtectedRoute from "./Admin-Pannel/Admin-Component/ProtectedRoute";
+import Add_property_form from "./Admin-Pannel/Admin-Component/Add_property_form";
 
 
 const App=()=> {
@@ -32,7 +32,6 @@ const App=()=> {
         <Route path="agent" element={<Agent />} />
         <Route path="blog" element={<Blog />} />
         <Route path="login" element={<LoginForm />} />
-        <Route path="addpropertyform" element={<Add_property_form />} />
         <Route path="propertylisting" element={<PropertyListings />} />
         <Route path="/home/propertyDetails" element={<Details_page />} />
 
@@ -46,6 +45,8 @@ const App=()=> {
             </ProtectedRoute>
             }>
         <Route index element={<AdminDashboard />} />
+        <Route path="/admin/addpropertyform" element={<Add_property_form />} />
+
 
 
 

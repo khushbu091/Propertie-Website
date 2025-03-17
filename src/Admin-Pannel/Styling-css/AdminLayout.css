@@ -161,6 +161,8 @@
   /* Sidebar Menu */
   .admin-menu {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   
   .admin-menu-title {
@@ -170,13 +172,7 @@
     text-transform: uppercase;
   }
   
-  .admin-menu ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .admin-menu li {
-    display: flex;
+  .admin-menu a {
     align-items: center;
     font-size: 16px;
     color: #495057;
@@ -185,12 +181,12 @@
     transition: 0.3s;
   }
   
-  .admin-menu li svg {
+  .admin-menu a svg {
     margin-right: 10px;
     color: #6c757d;
   }
   
-  .admin-menu li:hover,
+  .admin-menu a:hover,
   .admin-menu .active {
     background-color: #0c2d48;
     color: white;
