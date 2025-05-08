@@ -3,12 +3,11 @@ import Layout from "./Main-Component/Layout";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
-import BuySale from "./Components/BuySale";
 import Agent from "./Components/Agent";
-import LoginForm from "./Components/Login";
-import Blog from "./Components/Blog";
-import PropertyListings from "./Components/Property_Listing";
-import Details_page from "./Components/Details_page";
+import Service from "./Components/Service";
+import Terms from "./Components/Terms";
+import PrivacyPolicy from "./Components/Policy";
+import CancellationPolicy from "./Components/CancellationPolicy";
 
 // ---------------Admin pannel --------------------------------------------------
 import AdminLogin from "./Admin-Pannel/Admin-Component/AdminLogin";
@@ -24,18 +23,15 @@ const App=()=> {
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} /> 
-        <Route path="home" element={<Home />} /> 
-        <Route path="about" element={<About />} /> 
-        <Route path="contact" element={<Contact />} /> 
-        <Route path="buysale" element={<BuySale />} /> 
-        <Route path="agent" element={<Agent />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="login" element={<LoginForm />} />
-        <Route path="propertylisting" element={<PropertyListings />} />
-        <Route path="/home/propertyDetails" element={<Details_page />} />
-
-
+            <Route path="/" element={<Home />} /> 
+            <Route path="home" element={<Home />} /> 
+            <Route path="about" element={<About />} /> 
+            <Route path="contact" element={<Contact />} /> 
+            <Route path="agent" element={<Agent />} />
+            <Route path="service" element={<Service />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="policy" element={<PrivacyPolicy />} />
+            <Route path="cancellationPolicy" element={<CancellationPolicy />} />
         </Route>
 
         <Route path="adminlogin" element={<AdminLogin/>} />

@@ -67,7 +67,7 @@ const AdminLayout = () => {
         <h4 className="admin-menu-title">-- MAIN</h4>
         <nav className="admin-menu">
 
-          <a href="#"> <FaColumns /> Dashboard</a>
+          <a href="/admin/admindashboard"> <FaColumns /> Dashboard</a>
           {/* Real Estate with Submenu */}
           <div 
             className="nav-item has-submenu"

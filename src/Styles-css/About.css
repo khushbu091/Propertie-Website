@@ -13,8 +13,8 @@
 /* Overlay */
 .about-overlay {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 400px;
   background: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
   display: flex;
   align-items: center;
@@ -103,6 +103,10 @@
 }
 
 @media (max-width: 768px) {
+  .about-overlay{
+    width: 90%;
+    height: 400px;
+  }
   .about-title {
     font-size: 30px;
   }
@@ -116,7 +120,8 @@
   }
 
   .about-btn {
-    width: 100%;
+    width: 50%;
+    margin: auto;  
   }
 }
 
@@ -472,5 +477,8 @@
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .gallery-item{
+    width:100%;
   }
 }

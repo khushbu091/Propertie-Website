@@ -31,11 +31,11 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="contact">Contact Us</a></li>
+            <li><a href="service">Our Services</a></li>
+            <li><a href="policy">Privacy Policy</a></li>
+            <li><a href="terms">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -66,11 +66,23 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <p>© <a href="#">Your Site Name</a>, All Rights Reserved. Designed by <a href="#">HTML Codex</a></p>
-        <div className="footer-links">
-          <a href="#">Home</a>
-          <a href="#">Cookies</a>
-          <a href="#">Help</a>
-          <a href="#">FAQs</a>
+        <div className="footer-social-bottom">
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/yourpage" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="https://t.me/yourchannel" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-telegram-plane"></i>
+          </a>
+          
         </div>
       </div>
     </footer>

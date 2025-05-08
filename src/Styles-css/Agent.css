@@ -1,17 +1,17 @@
 /* Team List Container */
 .team-list {
-    max-width: 1000px;
+    max-width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
-    background-color: #e6e5e5;
+    margin-top: 110px;
+    padding: 20px ;
   }
   
   /* Individual Team Member */
   .team-member {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -23,8 +23,8 @@
   
   /* Profile Image */
   .team-img {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;

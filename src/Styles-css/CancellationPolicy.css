@@ -1,0 +1,36 @@
+.cancellation-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 90px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .cancellation-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .cancellation-container h2 {
+    font-size: 22px;
+    margin-top: 25px;
+    color: #222;
+    text-align: left;
+  }
+  
+  .cancellation-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .cancellation-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .cancellation-container a:hover {
+    text-decoration: underline;
+  }
+  

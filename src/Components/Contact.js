@@ -7,7 +7,7 @@ const Contact = () => {
     <>
       <section className="hero">
         <h1>Contact us</h1>
-        <p>Home - Property Listings</p> 
+        <p className="contact-p">Have questions, feedback, or need assistance? We’re here to help! Fill out the form below, and our team will get back to you as soon as possible. You can also reach us directly via email or phone for urgent inquiries. We look forward to hearing from you!</p> 
       </section>
      <div className="contact-container">
       <div className="contact-info">

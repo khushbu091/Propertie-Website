@@ -1,8 +1,15 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
 import "../Styles-css/Home.css"; 
 import { FaPhoneAlt } from "react-icons/fa";
-import { useRef } from "react";
+
 
 import img1 from "../Image/home-img01.jpg";
 import img2 from "../Image/home-img02.png";
@@ -14,20 +21,17 @@ import test3 from "../Image/testimonial-3.jpg"
 import cart1 from "../Image/property-1.jpg"
 import cart2 from "../Image/property-2.jpg"
 import cart3 from "../Image/property-3.jpg"
-import cart4 from "../Image/property-4.jpg"
+import cart4 from "../Image/11.jpg"
 
 import blog_main from "../Image/Blog-16.jpg"
-import blog1 from "../Image/blog-image-1.jpg"
-import blog2 from "../Image/blog-image-1.jpg"
-import blog3 from "../Image/blog-image-4.jpg"
-import { Link } from "react-router-dom";
+import blog1 from "../Image/f1.jpg"
+import blog2 from "../Image/f2.jpg"
+import blog3 from "../Image/f4.jpg"
 
 
 
 
-const images = [
-  
-];
+
 
 const properties = [
   { id: 1, name: "Appartment", count: 6, icon: "🏢", highlight: true },
@@ -42,9 +46,9 @@ const Properties_card = [
   {
     id: 1,
     image: cart1, // Replace with actual image path
-    price: "$148,000",
-    name: "Oakwood Manor Estates",
-    location: "25945 Washington Street, ID 1651612",
+    price: "For Rent",
+    name: "Spacious Houses Tailored for Comfortable Living",
+    location: "Explore our collection of well-maintained houses ideal for families and individuals. From cozy single-family homes to large multi-bedroom residences, we offer flexible rental options in peaceful neighborhoods. ",
     area: "2468 Sq",
     beds: "5 Beds",
     baths: "3 Baths",
@@ -55,10 +59,10 @@ const Properties_card = [
   {
     id: 2,
     image: cart2,
-    price: "$148,000",
-    name: "Willowbrook Grey Estate",
-    location: "75835 Herta Walks, Indonesia, ID 796326",
-    area: "2468 Sq",
+    price: "For Rent",
+    name: "Elegant Villas for Luxurious Living",
+    location: "Experience the charm of spacious, private villas with premium amenities, lush gardens, and serene surroundings — ideal for families, vacations, or upscale living.",
+    area: "3468 Sq",
     beds: "2 Beds",
     baths: "3 Baths",
     category: "For Sale",
@@ -68,10 +72,10 @@ const Properties_card = [
   {
     id: 3,
     image: cart3,
-    price: "$128,000",
-    name: "Timberland Interior Legacy",
-    location: "6621 Sammy Gateway, Japan, JP 65651",
-    area: "2598 Sq",
+    price: "For Rent",
+    name: "Warehousing Solutions for Your Business",
+    location: "Our warehouses offer high-capacity storage with 24/7 security, ideal for businesses needing flexible, scalable space. Perfect for inventory management, logistics, and industrial use.",
+    area: "9598 Sq",
     beds: "2 Beds",
     baths: "4 Baths",
     category: "For Lease",
@@ -80,10 +84,10 @@ const Properties_card = [
   {
     id: 4,
     image: cart4,
-    price: "$128,000",
-    name: "Cedar Ridge Residences",
-    location: "760 Isidro Knolls, Japan, JP 165561",
-    area: "2598 Sq",
+    price: "For Rent",
+    name: "Modern Apartments Designed for Comfort & Convenience",
+    location: "Experience modern apartment living with spacious layouts, top-tier amenities, and easy access to schools, shops, and transport—perfect for families, professionals, and students alike.",
+    area: "2798 Sq",
     beds: "2 Beds",
     baths: "4 Baths",
     category: "For Rent",
@@ -132,27 +136,16 @@ const blogs = [
 
 
 const Home = () => {
-      const sliderRef = useRef(null);
-      const slideLeft = () => {
-        if (sliderRef.current) {
-          sliderRef.current.scrollBy({ left: -370, behavior: "smooth" }); // Smooth left slide
-        }
-      };
-    
-      const slideRight = () => {
-        if (sliderRef.current) {
-          sliderRef.current.scrollBy({ left: 370, behavior: "smooth" }); // Smooth right slide
-        }
-      };
-    
-      const [currentImage, setCurrentImage] = useState(0);
+     
+      const [slides, setSlides] = useState([]);
 
       useEffect(() => {
-        const interval = setInterval(() => {
-          setCurrentImage((prev) => (prev + 1) % images.length);
-        }, 5000);
-        return () => clearInterval(interval);
+        fetch("/sliderData.json")
+          .then((res) => res.json())
+          .then((data) => setSlides(data))
+          .catch((error) => console.error("Error loading JSON:", error));
       }, []);
+      
 
 
       const [selectedCategory, setSelectedCategory] = useState("All Properties");
@@ -166,34 +159,35 @@ const Home = () => {
     <>
 {/*----- -------------------------- Hero Section Start ----------------------------------------------- */}
     <div className="container">
-    <div className="hero-container" style={{ backgroundImage: `url(${images[currentImage]})` }}>
-      <div className="hero-overlay">
-        <h3 className="trust-badge">MOST TRUSTED</h3>
-        <h1 className="hero-title">
-          Perfect Firm For Selling Or Leasing Houses, Flats, And Villas
-        </h1>
-        <div className="search-box">
-          <div className="search-options">
-            <label><input type="radio" name="property" /> For Lease</label>
-            <label><input type="radio" name="property" /> For Rent</label>
-            <label><input type="radio" name="property" /> For Sale</label>
-          </div>
-          <div className="search-fields">
-            <input type="text" placeholder="Enter Keyword" />
-            <select>
-              <option>Property Type</option>
-            </select>
-            <input type="text" placeholder="Location" />
-            <button className="search-button">Search Property</button>
-          </div>
-        </div>
-        <div className="stats">
-          <span className="stats-pro">🏠 Over 2M Properties</span>
-          <span  className="stats-pro">😀 46,789 people happy</span>
-          <span  className="stats-pro">⭐⭐⭐⭐⭐ 4.8 Top rated by People</span>
-        </div>
-      </div>
+    
+     <div className="home-slider-container">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay, EffectFade]}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000}}
+        loop={true}
+        effect="fade"
+        className="home-swiper"
+      >
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div
+              className="slide"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            >
+              <div className="overlay">
+                <div className="slide-content">
+                  <h2 className="slide-title">{slide.title}</h2>
+                  <p className="slide-subtitle">{slide.subtitle}</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
+    
  {/*----- -------------------------- Hero Section End ----------------------------------------------- */}
  {/*----- -------------------------- Property Catagory Start ----------------------------------------------- */}
 
@@ -296,7 +290,7 @@ const Home = () => {
 
       <div className="home-property-list">
         {Properties_card.map((property) => (
-         <Link to="propertyDetails"> <div className="home-property-card" key={property.id}>
+          <div className="home-property-card" key={property.id}>
             <img src={property.image} alt={property.name} className="property-image" />
             <span className="property-price">{property.price}</span>
             {property.tag && <span className="property-tag">{property.tag}</span>}
@@ -310,7 +304,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          </Link>
+          
         ))}
       </div>
     </div>

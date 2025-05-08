@@ -145,4 +145,20 @@
       border-radius: 5px;
     }
   }
+  .footer-social-bottom {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .footer-social-bottom a {
+    color: #fff;
+    font-size: 35px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social-bottom a:hover {
+    color: goldenrod; /* WhatsApp green for hover effect */
+  }
   
